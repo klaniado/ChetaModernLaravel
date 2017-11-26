@@ -12,8 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/preguntasfrecuentes', function () {
+    return view('indexpregfrec');
+});
+
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/perfil', 'PerfilController@infoUsuario');
 
 
 Auth::routes();

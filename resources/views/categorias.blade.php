@@ -1,22 +1,21 @@
 @extends('layouts.html_base')
 
 @section('header')
-
+@parent
 @endsection
 @section('cuerpo')
   <div class="">
-    <br><br><br><br>
-    <table>
 
-      <td>
       @foreach ($categorias as $categoria)
-        <h2>{{ $producto->name }}</h2><br>
+        <article class="">
+
+          {{ $categoria->name }}
+
+        </article>
       @endforeach
-    </td>
-      
-  </table>
+
 </div>
 @endsection
 @section('footer')
-
+@parent
 @endsection

@@ -6,6 +6,7 @@
 @section('header')
   @parent
 @endsection
+
 @section('cuerpo')
   <section class="box-slider">
     <div class="slider">

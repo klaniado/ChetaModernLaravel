@@ -1,16 +1,11 @@
 /*************HEADER***************/
-table{
 
+table{
     margin-left: 24%;
     display: inline-block;
     width: 76%;
 }
-.cajita_categorias{
-  float: left;
-  margin-top: 30%;
-  width: 24%;
-  display: inline-block;
-}
+
 .tdprecio{
   margin-left:auto;
 }

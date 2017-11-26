@@ -14,7 +14,7 @@ class AgregarColumnaRolTablaUsers extends Migration
     public function up()
     {
       Schema::table('users', function (Blueprint $table) {
-        $table->tinyInteger('rol');
+        $table->tinyInteger('rol')->nullable();
       });
     }
 

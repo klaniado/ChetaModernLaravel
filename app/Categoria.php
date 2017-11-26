@@ -8,10 +8,13 @@ class Categoria extends Model
 {
   protected $table = 'categorias';
 
-    protected $fillable=['name','remember_token'];
+    protected $fillable=[
+      'name',
+      'remember_token'
+  ];
 
     public function productos()
     {
-      return $this->hasMany('App\Product');
+      return $this->hasMany('Product');
     }
 }

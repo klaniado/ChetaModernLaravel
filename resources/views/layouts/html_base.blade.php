@@ -15,6 +15,17 @@
           <a id="logo" href="index"><img id="logoimg" src="img/logo_header.png" alt=""></a>
           <input id="buscador" type="search" name="search" placeholder="  ¿Qué estas buscando?" value="">
           <button id="send" type="submit" name="send"><i id="lupa" class="fa fa-search" aria-hidden="true"></i></button>
+          <a href="http://localhost:8000/logout" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">Logout
+          </a>
+          @if (session('status'))
+              <div class="alert alert-success">
+                  {{ session('status') }}
+              </div>
+          @endif
+          <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="DWX0QnvT8jDxJLgZOgb66l8JdoYumBZ6QPYiC0C9">
+<input type="hidden" name="_token" value="DWX0QnvT8jDxJLgZOgb66l8JdoYumBZ6QPYiC0C9">
+          </form>
         </div>
         <div class="menu">
           <label for="menu"><i id="lmen" class="fa fa-list" aria-hidden="true">Menú</i></label>
@@ -50,7 +61,7 @@
                 <h6 class="h6header">Contacto</h6>
               </li>
               </a>
-              <a  class="menu-pregfre" href="indexpregfrec">
+              <a  class="menu-pregfre" href="preguntasfrecuentes">
                 <li class="headerli">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
                   <h6 class="h6header">FAQs</h6>
