@@ -1,7 +1,7 @@
 @extends('layouts.html_base')
 
 @section('title')
-  Categorias
+  Productos por categoria
 @endsection
 @section('header')
 @parent
@@ -9,11 +9,13 @@
 @section('cuerpo')
   <div class="">
 
-    @foreach ($categorias as $categoria)
-      <a href="/categoria/{{ $categoria->id }}">
-        <article>{{ $categoria->name }}</article>
-      </a>
-    @endforeach
+      @foreach ($productos as $producto)
+        <article class="">
+
+          {{ $producto->name }}
+
+        </article>
+      @endforeach
 
 </div>
 @endsection

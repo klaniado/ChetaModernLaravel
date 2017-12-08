@@ -38,6 +38,33 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }}">
+                            <label for="edad" class="col-md-4 control-label">Edad</label>
+
+                            <div class="col-md-6">
+                                <input id="edad" type="number" class="form-control" name="edad" value="{{ old('edad') }}" required>
+
+                                @if ($errors->has('edad'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('edad') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        {{-- <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
+                            <label for="img" class="col-md-4 control-label">Avatar</label>
+
+                            <div class="col-md-6">
+                                <input id="img" type="file" class="form-control" name="img" value="" required>
+
+                                @if ($errors->has('img'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('img') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div> --}}
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

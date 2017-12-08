@@ -14,9 +14,9 @@ class AgregarColumnaIdCategoriaClaveForanea extends Migration
     public function up()
     {
         Schema::table('productos', function (Blueprint $table) {
-            $table->integer('id_categorias')->unsigned()->nullable();
+            $table->integer('categorias_id')->unsigned()->nullable();
 
-            $table->foreign('id_categorias')->references('id')->on('categorias');
+            $table->foreign('categorias_id')->references('id')->on('categorias');
         });
       }
 

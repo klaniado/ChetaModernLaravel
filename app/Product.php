@@ -11,6 +11,16 @@ class Product extends Model
   'nombre',
   'descripcion',
   'precio',
-  'remember_token'
+  'remember_token',
+  'categorias_id',
   ];
+
+  public function categoria()
+  {
+    return $this->belongsTo(Categoria::class, "categorias_id");
+  }
+  public function user()
+  {
+    return $this->belongsTo('App\User');
+  }
 }

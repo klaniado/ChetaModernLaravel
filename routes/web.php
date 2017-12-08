@@ -22,6 +22,9 @@ Route::get('/home', function () {
 Route::get('/preguntasfrecuentes', function () {
     return view('indexpregfrec');
 });
+Route::get('/index', function() {
+  return view('index');
+});
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -29,10 +32,16 @@ Route::get('/contacto', function () {
 
 Route::get('/perfil', 'PerfilController@infoUsuario');
 
+Route::get('/perfilDeUsuario', 'PerfilController@perfilDeUsuario');
 
 Auth::routes();
-Route::get('/index', function() {
-  return view('index');
-});
-Route::resource('/categorias','CategoriasController');
-Route::resource('/productos','ProductosController');
+
+Route::get('/productos','ProductosController@index');
+
+Route::get('/productos/crear','ProductosController@nuevoProducto');
+
+Route::post('/productos/crear','ProductosController@crearNuevoProducto');
+
+Route::get('/categorias','CategoriasController@index');
+
+Route::get('/categoria/{id}','CategoriasController@traerProductosDeLaCategoria');

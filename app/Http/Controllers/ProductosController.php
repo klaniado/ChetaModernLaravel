@@ -15,5 +15,14 @@ class ProductosController extends Controller
       $productos = Product::all();
       return view('productos', compact('productos','categorias'));
     }
-
+    public function nuevoProducto()
+    {
+          $categorias = Categoria::all();
+          return view('crearproducto', compact('categorias'));
+    }
+    public function crearNuevoProducto(Request $request)
+    {
+      $producto = new Product ($request->all());
+      return redirect('http://localhost:8000/productos');
+    }
 }

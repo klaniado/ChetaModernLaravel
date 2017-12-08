@@ -9,6 +9,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
       'descripcion' => $faker->text,
       'precio' => $faker->randomDigit,
       'images'=>'img\productos\MacBook.jpg',
-      'remember_token' => str_random(10),
+      //'remember_token' => str_random(10),
+      'categorias_id' => \App\Categoria::inRandomOrder()->first()->id,
   ];
 });

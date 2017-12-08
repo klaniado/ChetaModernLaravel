@@ -35,14 +35,5 @@
 
 @endsection
 @section('footer')
-
-      <footer>
-        <ul class="footerstyle">
-          <li class="foo-li"><a class="home" href="index">HOME</a></li><span class="foo-span">|</span>
-          <li class="foo-li"><a class="faqs" href="indexpregfrec">FAQ'S</a></li><span class="foo-span">|</span>
-          <li class="foo-li"><a class="foo-a" href="form">REGISTRATE</a></li><span class="foo-span">|</span>
-          <li class="foo-li"><a class="foo-a" href="contacto">CONTACTO</a></li>
-        </ul>
-      </footer>
-
+  @parent
 @endsection

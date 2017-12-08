@@ -15,7 +15,7 @@
       <div class="categorias">
         <ul>
           @foreach ($categorias as $categoria)
-            <a href="{{ $categoria->name }}">
+            <a href="/categoria/{{ $categoria->id }}">
               <li>{{ $categoria->name }}</li>
             </a>
           @endforeach

@@ -12,56 +12,59 @@
     @section('header')
       <header>
         <div class="header">
-          <a id="logo" href="index"><img id="logoimg" src="img/logo_header.png" alt=""></a>
+          <a id="logo" href="http://localhost:8000/index"><img id="logoimg" src="img/logo_header.png" alt=""></a>
           <input id="buscador" type="search" name="search" placeholder="  ¿Qué estas buscando?" value="">
           <button id="send" type="submit" name="send"><i id="lupa" class="fa fa-search" aria-hidden="true"></i></button>
-          <a href="http://localhost:8000/logout" onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();">Logout
+          @if (Auth::check())
+            <a href="http://localhost:8000/logout" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">Logout
           </a>
+
+          @endif
           @if (session('status'))
               <div class="alert alert-success">
                   {{ session('status') }}
               </div>
           @endif
           <form id="logout-form" action="http://localhost:8000/logout" method="POST" style="display: none;"><input type="hidden" name="_token" value="DWX0QnvT8jDxJLgZOgb66l8JdoYumBZ6QPYiC0C9">
-<input type="hidden" name="_token" value="DWX0QnvT8jDxJLgZOgb66l8JdoYumBZ6QPYiC0C9">
+             <input type="hidden" name="_token" value="DWX0QnvT8jDxJLgZOgb66l8JdoYumBZ6QPYiC0C9">
           </form>
         </div>
         <div class="menu">
           <label for="menu"><i id="lmen" class="fa fa-list" aria-hidden="true">Menú</i></label>
           <input id="menu" type="checkbox" name="" value="">
           <nav class="menu-nav">
-              <a   href="index">
+              <a   href="http://localhost:8000/index">
               <li class="headerli">
                 <i class="fa fa-home"></i>
                 <h6 class="h6header">Home</h6>
                 </li>
               </a>
-              <a   href="categorias">
+              <a   href="http://localhost:8000/categorias">
             <li class="headerli">
                 <i class="fa fa-bars" aria-hidden="true"></i>
                 <h6 class="h6header">Categorías</h6>
             </li>
           </a>
-              <a   href="productos">
+              <a   href="http://localhost:8000/productos">
                 <li class="headerli">
                 <i class="fa fa-mobile" aria-hidden="true"></i>
                <h6 class="h6header">Productos</h6>
              </li>
               </a>
-              <a   href="login">
+              <a   href="http://localhost:8000/login">
                 <li class="headerli">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <h6 class="h6header">Cuenta</h6>
               </li>
               </a>
-              <a   href="contacto">
+              <a   href="http://localhost:8000/contacto">
                 <li class="headerli">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <h6 class="h6header">Contacto</h6>
               </li>
               </a>
-              <a  class="menu-pregfre" href="preguntasfrecuentes">
+              <a  class="menu-pregfre" href="http://localhost:8000/preguntasfrecuentes">
                 <li class="headerli">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
                   <h6 class="h6header">FAQs</h6>
@@ -77,10 +80,10 @@
     @section('footer')
          <footer>
             <ul class="footerstyle">
-              <li class="foo-li"><a class="home" href="index">HOME</a></li><span class="foo-span">|</span>
-              <li class="foo-li"><a class="faqs" href="indexpregfrec">FAQ'S</a></li><span class="foo-span">|</span>
-              <li class="foo-li"><a class="foo-a" href="form">REGISTRATE</a></li><span class="foo-span">|</span>
-              <li class="foo-li"><a class="foo-a" href="contacto">CONTACTO</a></li>
+              <li class="foo-li"><a class="home" href="http://localhost:8000/index">HOME</a></li><span class="foo-span">|</span>
+              <li class="foo-li"><a class="faqs" href="http://localhost:8000/preguntasfrecuentes">FAQ'S</a></li><span class="foo-span">|</span>
+              <li class="foo-li"><a class="foo-a" href="http://localhost:8000/register">REGISTRATE</a></li><span class="foo-span">|</span>
+              <li class="foo-li"><a class="foo-a" href="http://localhost:8000/contacto">CONTACTO</a></li>
             </ul>
         </footer>
     @show
