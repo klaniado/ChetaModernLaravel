@@ -17,8 +17,11 @@ class ProductosController extends Controller
     }
     public function nuevoProducto()
     {
-          $categorias = Categoria::all();
-          return view('crearproducto', compact('categorias'));
+
+        $categorias = Categoria::all();
+        return view('crearproducto', compact('categorias'));
+
+
     }
     public function crearNuevoProducto(Request $request)
     {
@@ -28,6 +31,6 @@ class ProductosController extends Controller
     public function mostrarProducto($id)
     {
       $producto = Product::all()->where('id',$id);
-      return view('/producto')
+      return view('/producto',compact('producto'));
     }
 }

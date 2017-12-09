@@ -45,3 +45,5 @@ Route::post('/productos/crear','ProductosController@crearNuevoProducto');
 Route::get('/categorias','CategoriasController@index');
 
 Route::get('/categoria/{id}','CategoriasController@traerProductosDeLaCategoria');
+
+Route::post('/producto/{id}','ProductosController@mostrarProducto');
