@@ -1,7 +1,7 @@
 @extends('layouts.html_base')
 
-@section('titulo')
-  Bienvenido
+@section('title')
+  Bienvenido a Cheta
 @endsection
 @section('header')
   @parent

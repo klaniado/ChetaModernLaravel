@@ -12,7 +12,7 @@ class ProductosController extends Controller
     public function index()
     {
       $categorias = Categoria::all();
-      $productos = Product::all();
+      $productos = Product::paginate(15);
       return view('productos', compact('productos','categorias'));
     }
     public function nuevoProducto()
@@ -22,7 +22,12 @@ class ProductosController extends Controller
     }
     public function crearNuevoProducto(Request $request)
     {
-      $producto = new Product ($request->all());
+      Product::create($request->all());
       return redirect('http://localhost:8000/productos');
+    }
+    public function mostrarProducto($id)
+    {
+      $producto = Product::all()->where('id',$id);
+      return view('/producto')
     }
 }

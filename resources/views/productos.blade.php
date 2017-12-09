@@ -35,8 +35,12 @@
       </div>
 
     </div>
+  </div>
+
+    {{ $productos->links() }}
+
   @endsection
-</div>
+
 @section('footer')
   @parent
 @endsection

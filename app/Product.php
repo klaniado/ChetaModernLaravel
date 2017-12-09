@@ -8,19 +8,17 @@ class Product extends Model
 {
   protected $table = 'productos';
   protected $fillable = [
-  'nombre',
+  'id',
+  'name',
   'descripcion',
   'precio',
-  'remember_token',
   'categorias_id',
+  'images'
   ];
 
   public function categoria()
   {
     return $this->belongsTo(Categoria::class, "categorias_id");
   }
-  public function user()
-  {
-    return $this->belongsTo('App\User');
-  }
+
 }
