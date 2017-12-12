@@ -64,12 +64,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'edad' => $data['edad'],
-            // 'img' => $data['img'],
-            'password' => bcrypt($data['password']),
-        ]);
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'edad' => $data['edad'],
+        //     // 'img' => $data['img'],
+        //     'password' => bcrypt($data['password']),
+        // ]);
+
+        $usuario = new User($data->all());
+        $usuario->save();
+        $nombre = 'fotin.' . $data->file('imagen')->extension();
+    	//$path = $request->file('imagen')->storePublicly('public/fotines');
+    	 $path = $data->file('imagen')->storePubliclyAs('public/fotines', $nombre);
+
+       return redirect('/');
     }
 }

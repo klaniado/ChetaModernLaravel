@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 use App\Product;
 use App\Categoria;
+use App\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
@@ -23,10 +24,19 @@ class ProductosController extends Controller
 
 
     }
+
     public function crearNuevoProducto(Request $request)
     {
-      Product::create($request->all());
-      return redirect('http://localhost:8000/productos');
+      $producto = Product::create($request->all());
+                  $file = $request->file('images');
+                  $ext = $file->extension();
+                  $name = $request->name;
+                  $id = $request->id;
+                  $archivo = '$id.$name.".".$ext';
+                  Storage::put('storage/products/',$archivo);
+                  $image = new Image(['src' => $id.$name.'.'.$ext]);
+                  $producto->images=$image;
+      return redirect('/productos');
     }
     public function mostrarProducto($id)
     {

@@ -3,11 +3,9 @@
 @section('title')
 Nuevo producto
 @endsection
-@section('header')
-    @parent
-@endsection
+
 @section('cuerpo')
-<form class="" action="http://localhost:8000/productos/crear" method="post" enctype="multipart/form-data">
+<form class="" action="/productos/crear" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       {{ method_field('post') }}
 <div class="name">
@@ -49,8 +47,4 @@ Nuevo producto
 
 
 </form>
-
-@endsection
-@section('footer')
-    @parent
 @endsection

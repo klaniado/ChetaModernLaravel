@@ -1,14 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.html_base')
 
-@section('content')
+
+@section('sriptsjs')
+  <script src="/js/register.js"></script>
+@endsection
+
+@section('cuerpo')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading"><h1>Register</h1></div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" style="margin-left:30vw;" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -51,20 +56,36 @@
                                 @endif
                             </div>
                         </div>
-
-                        {{-- <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
-                            <label for="img" class="col-md-4 control-label">Avatar</label>
+                        <div class="form-group{{ $errors->has('images') ? ' has-error' : '' }}">
+                            <label for="images" class="col-md-4 control-label">Avatar</label>
 
                             <div class="col-md-6">
-                                <input id="img" type="file" class="form-control" name="img" value="" required>
+                                <input id="images" type="file" class="form-control" name="images" value="" required>
 
-                                @if ($errors->has('img'))
+                                @if ($errors->has('images'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('img') }}</strong>
+                                        <strong>{{ $errors->first('images') }}</strong>
                                     </span>
                                 @endif
                             </div>
-                        </div> --}}
+                        </div>
+
+                        <div class="form-group{{ $errors->has('pais') ? ' has-error' : '' }}">
+                            <label for="pais" class="col-md-4 control-label">Pais</label>
+
+                            <div class="col-md-6">
+                              <select class="pais" id="pais" name="pais">
+
+                              </select>
+
+
+                                @if ($errors->has('pais'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('pais') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
@@ -90,7 +111,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" style="margin-left:18vw;margin-top:4vw;" class="enviar">
                                     Register
                                 </button>
                             </div>

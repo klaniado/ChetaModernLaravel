@@ -16,7 +16,8 @@ class CrearTablaCategorias extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->rememberToken();
+            $table->string('images');
+            // $table->rememberToken();
             $table->timestamps();
         });
     }

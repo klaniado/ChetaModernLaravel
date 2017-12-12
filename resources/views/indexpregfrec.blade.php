@@ -1,7 +1,8 @@
 @extends('layouts.html_base')
+@section('scriptsjs')
+  <script type="text/javascript" src="/js/jquery-3.2.1.js" >
 
-@section('header')
-  @parent
+  </script>
 @endsection
 
 @section('cuerpo')
@@ -13,7 +14,7 @@
       <br>
         <ul>
           <li>
-        <p>  Ingresá en <a href="index">www.cheetatechs.com.ar </a> registrate o comprá como invitado. Te recomendamos registrarte ya que accedés a Múltiples beneficios como poder ver online el estado de tu pedido y tener tu historial de compra entre otros.
+        <p>  Ingresá en <a href="/index">www.cheetatechs.com.ar </a> registrate o comprá como invitado. Te recomendamos registrarte ya que accedés a Múltiples beneficios como poder ver online el estado de tu pedido y tener tu historial de compra entre otros.
         Luego seleccioná la opción COMPRA ONLINE para poder navegar en nuestro catálogo de productos y realizar tus compras de manera rápida, fácil y simple.</p>
           </li>
         </ul>
@@ -25,7 +26,7 @@
         <ul>
           <li>
 
-        <p>Ingresando en <a href="login">“Mi cuenta”</a> podés editar o modificar tus datos, dirección contraseña u otros.
+        <p>Ingresando en <a href="/login">“Mi cuenta”</a> podés editar o modificar tus datos, dirección contraseña u otros.
         Cualquier duda/consulta, recordá que podés comunicarte con nuestros asesores al 0800-123-12312 opción 2 de Lunes a viernes de 8:30 a 22:00 horas.  </p>
           </li>
         </ul>
@@ -35,7 +36,7 @@
       <i class="pregs">¿Como me registro?</i><br>
         <ul>
           <li>
-        <p>Podrás crear tu cuenta en el siguiente link: <a href="login">Registrate </a>donde debés completar todos los datos solicitados.</p>
+        <p>Podrás crear tu cuenta en el siguiente link: <a href="/login">Registrate </a>donde debés completar todos los datos solicitados.</p>
           </li>
         </ul>
       <br>
@@ -46,8 +47,8 @@
       <i class="pregs">¿Como realizo mi compra?</i><br>
         <ul>
           <li>
-        <p>Ingresá en <a href="index">www.cheetatechs.com.ar </a> y registrate. Te recomendamos registrarte ya que accedés a Múltiples beneficios como poder ver online el estado de tu pedido y tener tu historial de compra entre otros.
-        Luego seleccioná la opción <a href="productos">COMPRA ONLINE </a> para poder navegar en nuestro catálogo de productos y realizar tus compras de manera rápida, fácil y simple.</p>
+        <p>Ingresá en <a href="/index">www.cheetatechs.com.ar </a> y registrate. Te recomendamos registrarte ya que accedés a Múltiples beneficios como poder ver online el estado de tu pedido y tener tu historial de compra entre otros.
+        Luego seleccioná la opción <a href="/productos">COMPRA ONLINE </a> para poder navegar en nuestro catálogo de productos y realizar tus compras de manera rápida, fácil y simple.</p>
           </li>
         </ul>
       <br>
@@ -65,7 +66,7 @@
       <i class="pregs">¿Cuales son los medios de pago disponibles?</i><br>
         <ul>
           <li>
-        <p>Podés abonar tu pedido con una amplia cantidad de Tarjetas de Crédito. <br><img class="tarjetas" src="img/creditcards.jpg" alt="tarjetas de credito"><br> Deben estar emitidas dentro de la Republica Argentina. </p>
+        <p>Podés abonar tu pedido con una amplia cantidad de Tarjetas de Crédito. <br><img class="tarjetas" src="/img/creditcards.jpg" alt="tarjetas de credito"><br> Deben estar emitidas dentro de la Republica Argentina. </p>
           </li>
         </ul>
       <br>
@@ -74,7 +75,7 @@
       <i class="pregs">Me olvide mi contraseña... ¿Que hago?</i><br>
       <ul>
         <li>
-        <p>  Si no recordás tu contraseña podés hacer clik en el enlace <a href="login">"Cuenta"</a> - "Olvidé mi contraseña" ubicado en la parte inferior de la página principal. En la nueva página te pedirá escribir tu dirección de e-mail con la cual te registraste. Después de haber confirmado tus datos, recibirás un e-mail en tu correo en el cual te permitira elegir una nueva contraseña. </p>
+        <p>  Si no recordás tu contraseña podés hacer clik en el enlace <a href="/login">"Cuenta"</a> - "Olvidé mi contraseña" ubicado en la parte inferior de la página principal. En la nueva página te pedirá escribir tu dirección de e-mail con la cual te registraste. Después de haber confirmado tus datos, recibirás un e-mail en tu correo en el cual te permitira elegir una nueva contraseña. </p>
         </li>
       </ul>
      <br>
@@ -91,8 +92,4 @@
   </ol>
   </div>
 
-@endsection
-
-@section('footer')
-  @parent
 @endsection

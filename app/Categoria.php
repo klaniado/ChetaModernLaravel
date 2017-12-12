@@ -10,11 +10,16 @@ class Categoria extends Model
 
     protected $fillable=[
       'name',
-      'remember_token'
+      'images'
+      // 'remember_token'
   ];
 
     public function productos()
     {
       return $this->hasMany(Product::class, "categorias_id");
+    }
+    public function images()
+    {
+      return $this->hasOne(Image::class, "images");
     }
 }

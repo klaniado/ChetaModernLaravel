@@ -5,19 +5,19 @@
 @endsection
 @section('cuerpo')
   <div class="medio">
-    <a href="http://localhost:8000/perfilDeUsuario">
+    <a href="/perfilDeUsuario">
       <div class="logueadoizq">
         <img class="imgslogueado1" width="150px"src="img/perfil.jpg" alt=""><br>
         <h5>Mi Perfil</h5>
     </div>
     </a>
-    <a href="http://localhost:8000/editar">
+    <a href="/editar">
       <div class="logueadoder">
         <img class="imgslogueado2" width="150px"src="img/editar.jpg" alt=""><br>
         <h5>Editar</h5>
       </div>
     </a>
-    <a href="http://localhost:8000/productos/crear">
+    <a href="/productos/crear">
       <div class="logueadoder">
         <img class="imgslogueado2" width="150px"src="img/editar.jpg" alt=""><br>
         <h5>Vender</h5>
