@@ -36,7 +36,13 @@ Route::get('/perfilDeUsuario', 'PerfilController@perfilDeUsuario');
 
 Auth::routes();
 
-Route::get('/productos','ProductosController@index');
+Route::get('/productos','ProductosController@index')->name('listar');
+
+Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto'); //->middleware('es_admin')
+
+Route::get('producto/editar/{id}', 'ProductosController@mostrarFormEditar')->name('form_editar_producto');
+
+Route::post('producto/editar/{id}', 'ProductosController@editar')->name('editar-producto');
 
 Route::get('/productos/crear','ProductosController@nuevoProducto');
 
@@ -46,4 +52,4 @@ Route::get('/categorias','CategoriasController@index');
 
 Route::get('/categoria/{id}','CategoriasController@traerProductosDeLaCategoria');
 
-Route::post('/producto/{id}','ProductosController@mostrarProducto');
+Route::post('/producto/{id}','ProductosController@mostrarProducto')->name('producto');
