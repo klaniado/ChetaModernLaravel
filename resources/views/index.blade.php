@@ -3,9 +3,7 @@
 @section('title')
   Bienvenido a Cheta
 @endsection
-@section('header')
-  @parent
-@endsection
+
 
 @section('cuerpo')
   <section class="box-slider">
@@ -33,7 +31,4 @@
   </article>
   </section>
 
-@endsection
-@section('footer')
-  @parent
 @endsection

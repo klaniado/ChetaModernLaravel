@@ -10,10 +10,10 @@ class CategoriasController extends Controller {
 
 public function index() {
     $categorias=Categoria::all();
-    return view('categorias', compact('categorias'));
+    return view('/categorias', compact('categorias'));
     }
 public function traerProductosDeLaCategoria($id) {
     $productos=Product::all()->where('categorias_id',$id);
-    return view('productosporcategoria', compact('productos'));
+    return view('/productosporcategoria', compact('productos'));
   }
 }

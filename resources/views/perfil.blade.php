@@ -1,8 +1,6 @@
 @extends('layouts.html_base')
 
-@section('header')
-  @parent
-@endsection
+
 @section('cuerpo')
   <div class="medio">
     <a href="/perfilDeUsuario">
@@ -31,7 +29,4 @@
 
   </div>
   <br><br><br><br><br><br>
-@endsection
-@section('footer')
-  @parent
 @endsection

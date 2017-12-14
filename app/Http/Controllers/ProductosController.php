@@ -27,15 +27,12 @@ class ProductosController extends Controller
 
     public function crearNuevoProducto(Request $request)
     {
-      $producto = Product::create($request->all());
-                  $file = $request->file('images');
-                  $ext = $file->extension();
-                  $name = $request->name;
-                  $id = $request->id;
-                  $archivo = '$id.$name.".".$ext';
-                  Storage::put('storage/products/',$archivo);
-                  $image = new Image(['src' => $id.$name.'.'.$ext]);
-                  $producto->images=$image;
+
+      $nombre = 'producto' . $request->name .'.'. $request->file('images')->extension();
+      $path = $request->file('images')->storePubliclyAs('public/productos', $nombre);
+      $producto = new Product($request->all());
+      $producto->images = "/storage/productos/".$nombre;
+      $producto->save();
       return redirect('/productos');
     }
     public function mostrarProducto($id)

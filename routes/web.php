@@ -38,7 +38,7 @@ Auth::routes();
 
 Route::get('/productos','ProductosController@index')->name('listar');
 
-Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto'); //->middleware('es_admin')
+Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto'); 
 
 Route::get('producto/editar/{id}', 'ProductosController@mostrarFormEditar')->name('form_editar_producto');
 

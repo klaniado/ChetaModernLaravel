@@ -1,9 +1,5 @@
 @extends('layouts.html_base')
 
-@section('header')
-  @parent
-@endsection
-
 @section('cuerpo')
   <div class="container"><br><br><br><br>
     <h1>Bienvenido al perfil de {{ $usuario ->name }}</h1>
@@ -22,8 +18,4 @@
 
   </div>
 
-@endsection
-
-@section('footer')
-  @parent
 @endsection

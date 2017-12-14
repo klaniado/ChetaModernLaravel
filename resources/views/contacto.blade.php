@@ -1,8 +1,6 @@
 @extends('layouts.html_base')
 
-@section('header')
-    @parent
-@endsection
+
 @section('cuerpo')
   <div class="medio">
     <h1>Contactanos</h1><br><br>
@@ -17,7 +15,4 @@
     </form>
     <br><br>
   </div>
-@endsection
-@section('footer')
-    @parent
 @endsection

@@ -3,9 +3,7 @@
 @section('title')
   Categorias
 @endsection
-@section('header')
-@parent
-@endsection
+
 @section('cuerpo')
   <div class="">
 <br><br>
@@ -21,7 +19,4 @@
     @endforeach
 
 </div>
-@endsection
-@section('footer')
-@parent
 @endsection

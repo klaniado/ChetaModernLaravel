@@ -1,14 +1,8 @@
 @extends('layouts.html_base')
 
-@section('title')
-  Productos
-@endsection
-@section('header')
-  @parent
-@endsection
-  @section('cajita')
+  @section('title')
+    Productos
   @endsection
-
   @section('cuerpo')
     <div class="container2">
 
@@ -29,9 +23,9 @@
                   <table>
                     @forelse($productos as $producto)
                         <tr>
-                          <td class="tdimg" ><img width="60px;" src={{$producto->images}}></td>
+                          <td class="tdimg" ><img width="60px;" src="{{$producto->images}}"></td>
                           <td class="tdname" ><h2>{{ $producto->name }}</h2></td>
-                          <td class="tdprecio" ><h2>{{ $producto->precio }}</h2></td>
+                          <td class="tdprecio" ><h2>${{ $producto->precio }}</h2></td>
                           <td><form class="" action="/producto/{{$producto->id}}" method="post">{{ csrf_field() }}
                             <input  style="width:100px;" type="submit" name="" value="Ver Producto">
                           </form></td>
@@ -57,7 +51,3 @@
               {{ $productos->links() }}
 
             @endsection
-
-          @section('footer')
-            @parent
-          @endsection

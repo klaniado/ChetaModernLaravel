@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.html_base')
 
-@section('content')
+@section('cuerpo')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

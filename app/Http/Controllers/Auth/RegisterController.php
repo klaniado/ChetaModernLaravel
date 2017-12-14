@@ -45,13 +45,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    protected function validator(array $request)
     {
-        return Validator::make($data, [
+        return Validator::make($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'edad' => 'required|int|max:150',
-            // 'img' => 'required|string|max:255',
+            'images' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -62,22 +62,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $request)
     {
-        // return User::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'edad' => $data['edad'],
-        //     // 'img' => $data['img'],
-        //     'password' => bcrypt($data['password']),
-        // ]);
+      $nombre = $data['name'] .'.';
+      $path = $data->file('images')->storePubliclyAs('public/img', $nombre);
+      $usuario = new User($data->all());
+      $usuario->images = "/storage/img/".$nombre;
+      $usuario->save();
+      return redirect('/');
 
-        $usuario = new User($data->all());
-        $usuario->save();
-        $nombre = 'fotin.' . $data->file('imagen')->extension();
-    	//$path = $request->file('imagen')->storePublicly('public/fotines');
-    	 $path = $data->file('imagen')->storePubliclyAs('public/fotines', $nombre);
-
-       return redirect('/');
     }
 }

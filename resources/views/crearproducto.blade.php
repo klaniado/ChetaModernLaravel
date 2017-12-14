@@ -23,7 +23,7 @@ Nuevo producto
 <div class="precio">
 
   <label for="precio">Precio:</label><br>
-  <input type="number" name="precio" value="">
+  <input type="number" name="precio" value="$">
 
 </div><br>
 <div class="images">
