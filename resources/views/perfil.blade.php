@@ -1,6 +1,8 @@
 @extends('layouts.html_base')
 
-
+@section('title')
+  Perfil
+@endsection
 @section('cuerpo')
   <div class="medio">
     <a href="/perfilDeUsuario">
@@ -9,7 +11,7 @@
         <h5>Mi Perfil</h5>
     </div>
     </a>
-    <a href="/editar">
+    <a href="/editar/{{Auth::user()->id}}">
       <div class="logueadoder">
         <img class="imgslogueado2" width="150px"src="img/editar.jpg" alt=""><br>
         <h5>Editar</h5>

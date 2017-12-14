@@ -1,10 +1,10 @@
 @extends('layouts.html_base')
 @section('scriptsjs')
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.js">
+    </script>
+
 @endsection
-<head>
-  <script type="text/javascript">
-  </script>
-</head>
 @section('cuerpo')
   <div class="pregfrec">
     <strong><h2 class="title"><a class="title"href="">Preguntas Frecuentes</a></h2></strong><br><br><br>

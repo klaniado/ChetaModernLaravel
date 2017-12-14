@@ -11,9 +11,9 @@
       <a href="/categoria/{{ $categoria->id }}">
         <article style="width='150px';border:solid 2px rgb(247, 199, 104);margin-bottom:40px;">
           <img src="{{$categoria->images}}" width="250px"alt="">
-          <h5>
+          <h2 style="color:black;">
             {{ $categoria->name }}
-          </h5>
+          </h2>
         </article>
       </a>
     @endforeach

@@ -1,9 +1,7 @@
 @extends('layouts.html_base')
 
 
-@section('sriptsjs')
-  <script src="/js/register.js"></script>
-@endsection
+
 
 @section('cuerpo')
 <div class="container">
@@ -56,36 +54,26 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('images') ? ' has-error' : '' }}">
-                            <label for="images" class="col-md-4 control-label">Avatar</label>
 
-                            <div class="col-md-6">
-                                <input id="images" type="file" class="form-control" name="images" value="" required>
+                        <div id="primeraParte"><br>
+                      <div class="">
 
-                                @if ($errors->has('images'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('images') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                      		<label for="cmbPaises">Pais</label><br>
+                      		<select id="cmbPaises">
+                      		</select>
+                      	</div><br>
+                      		<div class="">
 
-                        <div class="form-group{{ $errors->has('pais') ? ' has-error' : '' }}">
-                            <label for="pais" class="col-md-4 control-label">Pais</label>
-
-                            <div class="col-md-6">
-                              <select class="pais" id="pais" name="pais">
-
-                              </select>
+                      				<label for="s-provincia">Provincia</label><br>
+                      				<select id="cmbProvincia">
+                      				</select>
+                      			</div>
 
 
-                                @if ($errors->has('pais'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('pais') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                      	</div>
+
+
+
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

@@ -17,9 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('cmbPaises')->nullable();
             $table->string('password');
             $table->tinyInteger('edad')->nullable();
-            $table->string('images')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

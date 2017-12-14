@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    @yield('scriptsjs')
+    <script src="register.js">
+
+    </script>
   </head>
   <body>
 
@@ -20,7 +22,7 @@
           </form>
         @endif
 
-          <a id="logo" href="/index"><img id="logoimg" src="img/logo_header.png" alt=""></a>
+          <a id="logo" href="/index"><img id="logoimg" src="/img/logo_header.png" alt=""></a>
           <div class="header">
           <input id="buscador" type="search" name="search" placeholder="  ¿Qué estas buscando?" value="">
           <button id="send" type="submit" name="send"><i id="lupa" class="fa fa-search" aria-hidden="true"></i></button>

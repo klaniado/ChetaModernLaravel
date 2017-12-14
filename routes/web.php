@@ -32,13 +32,17 @@ Route::get('/contacto', function () {
 
 Route::get('/perfil', 'PerfilController@infoUsuario');
 
+Route::get('/editar/{id}', 'PerfilController@mostrarFormEditarUsuario');
+
+Route::post('/editar/{id}', 'PerfilController@guardarEdicion')->name('editar_usuario_post');
+
 Route::get('/perfilDeUsuario', 'PerfilController@perfilDeUsuario');
 
 Auth::routes();
 
 Route::get('/productos','ProductosController@index')->name('listar');
 
-Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto'); 
+Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto');
 
 Route::get('producto/editar/{id}', 'ProductosController@mostrarFormEditar')->name('form_editar_producto');
 
