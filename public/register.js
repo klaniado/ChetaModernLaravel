@@ -5,10 +5,11 @@ window.onload = function(){
 		var cmbpaises = document.getElementById('cmbPaises');
 		cmbpaises.addEventListener("change",cambioPaisSeleccionado);
 
-		var cmbProvincia = document.getElementById('cmbProvincia');
-		cmbPaises.addEventListener("change",cambioProvinciaSeleccionada);
+		var submitearRegistro = document.getElementById('submitRegistro');
+		submitearRegistro.addEventListener("click",registrar);
 
 }
+
 
 function cambioPaisSeleccionado(){
 		//lleno las provincias
@@ -22,24 +23,27 @@ function llenarSelectPaises(resultado){
 function llenarSelectProvincias(resultado){
 		llenarSelect("cmbProvincia",resultado.contenido);
 }
+function registrar() {
+		return view('/register');
+}
 
 
-function llenarSelect (selectId, objetoResultado){
-	var select = document.getElementById(selectId);
+function llenarSelect (cmbPaises, objetoResultado){
+	var select = document.getElementById(cmbPaises);
 
 	var option = document.createElement("OPTION");
-	option.value = -1;
+	option.value = '';
 	option.text = 'Por favor elegi algo';
 
 	select.appendChild(option);
 
 	for (var x in objetoResultado) {
 
-    	var option = document.createElement("OPTION");
-			option.value = objetoResultado[x];
-			option.text = x;
+    	var option2 = document.createElement("OPTION");
+			option2.value = objetoResultado[x];
+			option2.text = x;
 
-			select.appendChild(option);
+			select.appendChild(option2);
 	}
 
 }

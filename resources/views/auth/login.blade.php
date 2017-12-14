@@ -1,5 +1,7 @@
 @extends('layouts.html_base')
-
+@section('title')
+  Login
+@endsection
 @section('cuerpo')
   <br><br><br><br><br>
 <div class="container">

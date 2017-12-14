@@ -40,6 +40,8 @@ Route::get('/perfilDeUsuario', 'PerfilController@perfilDeUsuario');
 
 Auth::routes();
 
+// Route::post('/register', 'Auth\RegisterController@create')->name('crear_usuario');
+
 Route::get('/productos','ProductosController@index')->name('listar');
 
 Route::delete('producto/eliminar/{id}', 'ProductosController@eliminar')->name('eliminar_producto');
