@@ -119,7 +119,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="button" style="margin-left:18vw;margin-top:4vw;" class="enviar" onClick="validacion();">
+                                <button type="submit" style="margin-left:18vw;margin-top:4vw;" class="enviar" onClick="validacion();">
                                     Register
                                 </button>
                             </div>
