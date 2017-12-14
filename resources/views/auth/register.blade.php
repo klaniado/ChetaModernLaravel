@@ -100,7 +100,10 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                              <input type="submit" id="submitRegistro" style="margin-left:18vw;margin-top:4vw;" value="Register"class="enviar">
+            <input type="submit" id="submitRegistro" style="margin-left:18vw;margin-top:4vw;" value="Register"class="enviar">
+                                <button type="submit" style="margin-left:18vw;margin-top:4vw;" class="enviar" onClick="validacion();">
+                                    Register
+                                </button>
                             </div>
                         </div>
                     </form>
