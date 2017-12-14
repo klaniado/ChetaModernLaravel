@@ -1,5 +1,25 @@
 @extends('layouts.html_base')
-
+<script type="text/javascript">
+  function validacion(){
+    var reg = $.post('source/register.blade.php', {
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'edad' => 'required|int|max:150',
+        'pais' => 'required|string',
+        'password' => 'required|string|min:6|confirmed',
+               });
+               reg.done(function (data) {
+                   if (data == "Success") {
+                       window.location.href = "perfil.blade.php";
+                   }
+                   else {
+                       alert("Hay errores en alguno de los campos");
+                       location.reload();
+                   }
+               });
+           });
+  }
+</script>
 
 
 
@@ -99,7 +119,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" style="margin-left:18vw;margin-top:4vw;" class="enviar">
+                                <button type="button" style="margin-left:18vw;margin-top:4vw;" class="enviar" onClick="validacion();">
                                     Register
                                 </button>
                             </div>
